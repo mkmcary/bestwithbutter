@@ -4,6 +4,7 @@ import App from "./App";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./routes/homepage";
+import MyList from "./routes/mylist";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/list",
+        element: <MyList />,
       },
     ],
   },

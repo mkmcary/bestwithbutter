@@ -20,7 +20,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 import BWBLogo from "./logo";
 
-const pages = ["My List", "WatchFinder"];
+const pages = [
+  { name: "My List", route: "/list" },
+  { name: "WatchFinder", route: "/watchfinder" },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function NavBar() {
@@ -60,16 +63,18 @@ function NavBar() {
 
           {/* Buttons */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ m: 1, display: "block" }}
-                variant="contained"
-                color="secondary"
-              >
-                {page}
-              </Button>
+            {pages.map(({ name, route }) => (
+              <Link to={route} style={{ textDecoration: "none" }}>
+                <Button
+                  key={name}
+                  onClick={handleCloseNavMenu}
+                  sx={{ m: 1, display: "block" }}
+                  variant="contained"
+                  color="secondary"
+                >
+                  {name}
+                </Button>
+              </Link>
             ))}
           </Box>
 
@@ -102,10 +107,15 @@ function NavBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+              {pages.map(({ name, route }) => (
+                <Link
+                  to={route}
+                  style={{ color: "black", textDecoration: "none" }}
+                >
+                  <MenuItem key={name} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{name}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
