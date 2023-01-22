@@ -1,4 +1,4 @@
-import { Box, CssBaseline } from "@mui/material";
+import { Box, CssBaseline, Paper } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -37,7 +37,21 @@ function App() {
             p: 3,
           }}
         >
-          <Outlet />
+          <Paper
+            elevation={10}
+            sx={{
+              borderRadius: 10,
+              width: "70%",
+              height: "100%",
+              minWidth: 700,
+              minHeight: 1000,
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
+            <Outlet />
+          </Paper>
         </Box>
         <Footer />
       </ThemeProvider>

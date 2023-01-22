@@ -1,4 +1,5 @@
 import { Box, Paper, Typography, Button } from "@mui/material";
+import BWBLogo from "./logo";
 
 function Footer() {
   return (
@@ -19,6 +20,9 @@ function Footer() {
           Best with Butter is a Web App Developed by Matthew Martin for Use in
           Tracking Movies and TV Shows to Watch.
         </Typography>
+        <Box>
+          <BWBLogo />
+        </Box>
         <Typography variant="caption">
           &copy; Copyright Matthew Martin, 2023
         </Typography>
