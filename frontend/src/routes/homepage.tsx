@@ -9,6 +9,7 @@ function HomePage() {
           borderRadius: 10,
           width: "70%",
           height: "100%",
+          minWidth: 700,
           minHeight: 1000,
           justifyContent: "center",
           alignItems: "center",

@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import NavBar from "./components/navbar";
+import Footer from "./components/footer";
 
 const theme = createTheme({
   palette: {
@@ -28,9 +29,17 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <NavBar />
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            p: 3,
+          }}
+        >
           <Outlet />
         </Box>
+        <Footer />
       </ThemeProvider>
     </Box>
   );
