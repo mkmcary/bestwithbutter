@@ -4,7 +4,7 @@ import App from "./App";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./routes/homepage";
-import MyList from "./routes/mylist";
+import MyList, { loader as myListLoader } from "./routes/mylist";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/list",
+        loader: myListLoader,
         element: <MyList />,
       },
     ],

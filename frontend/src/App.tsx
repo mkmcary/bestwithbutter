@@ -48,6 +48,7 @@ function App() {
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
+              p: 5,
             }}
           >
             <Outlet />
