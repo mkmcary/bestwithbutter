@@ -42,6 +42,12 @@ function MyList() {
     <Box>
       <Typography variant="h2">Your Watchlist</Typography>
       <ListTable movies={data.movies} />
+      <img
+        src={
+          "https://image.tmdb.org/t/p/original/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg"
+        }
+        style={{ width: 500 }}
+      />
     </Box>
   );
 }
