@@ -5,6 +5,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./routes/homepage";
 import MyList, { loader as myListLoader } from "./routes/mylist";
+import SearchPage from "./routes/search";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: "/list",
         loader: myListLoader,
         element: <MyList />,
+      },
+      {
+        path: "/watchfinder",
+        element: <SearchPage />,
       },
     ],
   },
