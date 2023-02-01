@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import SearchBar from "../components/searchbar";
 
-import { useState } from "react";
-import axios from "axios";
+import { useState, useContext } from "react";
+import { ApiContext } from "../context/apiContext";
 
 import ListTable from "../components/listTable";
 
@@ -16,10 +16,12 @@ export interface MovieDetails {
 }
 
 function SearchPage() {
+  let axios = useContext(ApiContext);
+
   const [results, setResults] = useState<any>();
 
   const search = async (snip: string) => {
-    const response = await axios.get("http://localhost:8080/search/", {
+    const response = await axios.get("/search/", {
       params: { snippet: snip },
     });
     setResults(response.data.movies);

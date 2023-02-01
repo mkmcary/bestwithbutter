@@ -1,0 +1,49 @@
+services:
+  nginx:
+    image: nginx
+    depends_on:
+      - frontend
+      - backend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    restart: unless-stopped
+
+  frontend:
+    hostname: frontend
+    build: ./frontend/
+    volumes:
+      - ./frontend/src:/frontend/src
+#    ports:
+#      - 5173:5173
+
+  db:
+    hostname: db
+    image: mysql:5.7
+    # volumes:
+    #   - database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${BWB_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: best-with-butter
+      MYSQL_USER: ${BWB_MYSQL_USER}
+      MYSQL_PASSWORD: ${BWB_MYSQL_PASSWORD}
+#    ports:
+#      - 3306:3306
+
+  backend:
+    hostname: backend
+    depends_on:
+      - db
+    build: 
+      context: ./backend/
+      args:
+        TMDB: $TMDB_BEARER_KEY
+#    ports:
+#      - 5000:80
+
+# volumes:
+#   database:

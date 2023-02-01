@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 import requests
 from typing import Union
 
@@ -11,10 +11,12 @@ router = APIRouter(
 
 
 @router.get("/")
-async def search(snippet: str, page: Union[int, None] = None):
+async def search(req: Request, snippet: str, page: Union[int, None] = None):
     '''
     Search for a movie and return possible results
     '''
+
+    print(req.headers)
 
     if page is None:
         page = 1
