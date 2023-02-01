@@ -43,10 +43,24 @@ function MovieNode({ movie }: MovieNodeProps) {
   return (
     <Box>
       <Grid container>
-        <Grid item xs={4}>
+        <Grid
+          item
+          xs={4}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <img
             src={movie.poster_url}
-            style={{ width: 300, borderRadius: 10 }}
+            style={{
+              width: "80%",
+              maxWidth: 300,
+              borderRadius: 10,
+              margin: "auto",
+              display: "block",
+            }}
           />
         </Grid>
         <Grid item xs={8}>
