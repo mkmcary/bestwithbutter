@@ -19,7 +19,7 @@ function SearchPage() {
   const [results, setResults] = useState<any>();
 
   const search = async (snip: string) => {
-    const response = await axios.get("http://localhost:8080/search/", {
+    const response = await axios.get("/api/search/", {
       params: { snippet: snip },
     });
     setResults(response.data.movies);
