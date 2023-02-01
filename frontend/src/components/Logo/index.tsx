@@ -1,7 +1,7 @@
-import { Typography, Box, Grid } from "@mui/material";
-import popcornSvg from "../assets/popcorn.svg";
+import { Typography, Box } from "@mui/material";
+import popcornSvg from "../../assets/popcorn.svg";
 
-function BWBLogo() {
+function Logo() {
   return (
     <Box
       display="flex"
@@ -32,4 +32,4 @@ function BWBLogo() {
   );
 }
 
-export default BWBLogo;
+export default Logo;

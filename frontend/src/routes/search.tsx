@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
-import SearchBar from "../components/searchbar";
+import SearchBar from "../components/SearchBar";
 
 import { useState, useContext } from "react";
-import { ApiContext } from "../context/apiContext";
+import { ApiContext } from "../context/ApiContext";
 
-import ListTable from "../components/listTable";
+import ListTable from "../components/ListTable";
+import MovieNode from "../components/MovieNode";
 
 export interface MovieDetails {
   id: number;

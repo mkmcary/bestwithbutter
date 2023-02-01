@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import ApiContextProvider from "./context/apiContext";
+import ApiContextProvider from "./context/ApiContext";
 
-import NavBar from "./components/navbar";
-import Footer from "./components/footer";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const theme = createTheme({
   palette: {

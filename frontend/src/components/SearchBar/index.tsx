@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { Form } from "react-router-dom";
 
 interface SearchBarProps {
   search: (snippet: string) => void;
