@@ -5,8 +5,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import ApiContextProvider from "./context/apiContext";
 
-import NavBar from "./components/navbar";
-import Footer from "./components/footer";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const theme = createTheme({
   palette: {

@@ -1,5 +1,5 @@
-import { Box, Paper, Typography, Button } from "@mui/material";
-import BWBLogo from "./logo";
+import { Box, Paper, Typography } from "@mui/material";
+import Logo from "../Logo";
 
 function Footer() {
   return (
@@ -26,7 +26,7 @@ function Footer() {
           TMDB.
         </Typography>
         <Box>
-          <BWBLogo />
+          <Logo />
         </Box>
         <Typography variant="caption">
           &copy; Copyright Matthew Martin, 2023

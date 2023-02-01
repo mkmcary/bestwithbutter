@@ -10,7 +10,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import { MovieDetails } from "../routes/search";
+import { MovieDetails } from "../../routes/search";
 
 interface ListTableProps {
   movies: MovieDetails[];

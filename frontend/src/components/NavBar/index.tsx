@@ -17,8 +17,7 @@ import {
 import { Link } from "react-router-dom";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import AdbIcon from "@mui/icons-material/Adb";
-import BWBLogo from "./logo";
+import Logo from "../Logo";
 
 const pages = [
   { name: "My List", route: "/list" },
@@ -57,7 +56,7 @@ function NavBar() {
           {/* Logo */}
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              <BWBLogo />
+              <Logo />
             </Link>
           </Box>
 
@@ -122,7 +121,7 @@ function NavBar() {
 
           <Box sx={{ display: { xs: "flex", md: "none" }, flexGrow: 1 }}>
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              <BWBLogo />
+              <Logo />
             </Link>
           </Box>
 
