@@ -16,6 +16,8 @@ services:
   frontend:
     hostname: frontend
     build: ./frontend/
+    volumes:
+      - ./frontend/src:/frontend/src
 #    ports:
 #      - 5173:5173
 
