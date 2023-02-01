@@ -3,6 +3,8 @@ import { Outlet } from "react-router-dom";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import ApiContextProvider from "./context/apiContext";
+
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 
@@ -51,7 +53,9 @@ function App() {
               p: 5,
             }}
           >
-            <Outlet />
+            <ApiContextProvider>
+              <Outlet />
+            </ApiContextProvider>
           </Paper>
         </Box>
         <Footer />

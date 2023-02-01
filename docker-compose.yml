@@ -1,6 +1,9 @@
 services:
   nginx:
     image: nginx
+    depends_on:
+      - frontend
+      - backend
     ports:
       - "80:80"
       - "443:443"
