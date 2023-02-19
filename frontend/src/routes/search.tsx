@@ -1,11 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import SearchBar from "../components/SearchBar";
 
 import { useState, useContext } from "react";
 import { ApiContext } from "../context/ApiContext";
 
 import ListTable from "../components/ListTable";
-import MovieNode from "../components/MovieNode";
 
 export interface MovieDetails {
   id: number;
@@ -29,12 +28,15 @@ function SearchPage() {
   };
 
   return (
-    <Box>
-      <div style={{ padding: 10 }}>
-        <SearchBar search={search} />
-      </div>
-      {results && <ListTable movies={results} />}
-    </Box>
+    <div>
+      <Box sx={{ display: "flex", p: "30px", justifyContent: "center" }}>
+        <div style={{ marginTop: "50px", marginBottom: "20px" }}>
+          <SearchBar search={search} />
+        </div>
+      </Box>
+
+      <Box sx={{ p: "30px" }}>{results && <ListTable movies={results} />}</Box>
+    </div>
   );
 }
 

@@ -1,15 +1,5 @@
-import * as React from "react";
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Paper, Grid } from "@mui/material";
+import ContentWrapper from "../ContentWrapper";
 import MovieNode, { MovieDetails } from "../MovieNode";
 
 interface ListTableProps {
@@ -18,24 +8,17 @@ interface ListTableProps {
 
 export default function ListTable({ movies }: ListTableProps) {
   return (
-    <TableContainer
-      component={Paper}
-      sx={{ borderRadius: 5, backgroundColor: "#fef9e1" }}
-    >
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableBody>
-          {movies != null &&
-            movies.map((movie) => {
-              return (
-                <TableRow>
-                  <TableCell>
-                    <MovieNode movie={movie} />
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Grid container spacing={"30px"}>
+      {movies != null &&
+        movies.map((movie) => {
+          return (
+            <Grid item xs={12} md={6} lg={4}>
+              <ContentWrapper>
+                <MovieNode movie={movie} />
+              </ContentWrapper>
+            </Grid>
+          );
+        })}
+    </Grid>
   );
 }

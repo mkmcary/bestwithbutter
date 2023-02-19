@@ -41,8 +41,16 @@ function MovieNode({ movie }: MovieNodeProps) {
   };
 
   return (
-    <Box>
-      <Grid container>
+    <Box sx={{ textAlign: "left" }}>
+      <Box sx={{ m: "10px" }}>
+        <Typography variant="h4" sx={{ fontWeight: 700 }}>
+          {movie.title}
+        </Typography>
+      </Box>
+
+      <Divider />
+
+      <Grid container sx={{ my: "10px", mb: "10px" }}>
         <Grid
           item
           xs={4}
@@ -64,14 +72,6 @@ function MovieNode({ movie }: MovieNodeProps) {
           />
         </Grid>
         <Grid item xs={8}>
-          <Box sx={{ m: "10px" }}>
-            <Typography variant="h4" sx={{ fontWeight: 700 }}>
-              {movie.title}
-            </Typography>
-          </Box>
-
-          <Divider />
-
           <Box sx={{ m: "10px", minHeight: "300px" }}>
             <Typography variant="h6" sx={{ fontWeight: 600, mb: "5px" }}>
               {formatDateString(movie.release_date)}
@@ -81,14 +81,14 @@ function MovieNode({ movie }: MovieNodeProps) {
             </Typography>
             <Typography>{movie.overview}</Typography>
           </Box>
-
-          <Divider />
-
-          <Box sx={{ m: "10px" }}>
-            <Typography variant="caption">TMDB ID: {movie.id}</Typography>
-          </Box>
         </Grid>
       </Grid>
+
+      <Divider />
+
+      <Box sx={{ m: "10px" }}>
+        <Typography variant="caption">TMDB ID: {movie.id}</Typography>
+      </Box>
     </Box>
   );
 }

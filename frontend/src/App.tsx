@@ -28,38 +28,14 @@ const theme = createTheme({
 function App() {
   return (
     <Box>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <NavBar />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            p: 3,
-          }}
-        >
-          <Paper
-            elevation={10}
-            sx={{
-              borderRadius: 10,
-              width: "70%",
-              height: "100%",
-              maxWidth: 1000,
-              minHeight: 1000,
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-              p: 5,
-            }}
-          >
-            <ApiContextProvider>
-              <Outlet />
-            </ApiContextProvider>
-          </Paper>
-        </Box>
-        <Footer />
-      </ThemeProvider>
+      <ApiContextProvider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <NavBar />
+          <Outlet />
+          <Footer />
+        </ThemeProvider>
+      </ApiContextProvider>
     </Box>
   );
 }
