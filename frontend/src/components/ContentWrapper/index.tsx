@@ -1,7 +1,7 @@
 import { Paper } from "@mui/material";
 
 type ContentWrapperProps = {
-  children: JSX.Element[];
+  children: JSX.Element | JSX.Element[];
 };
 
 function ContentWrapper({ children }: ContentWrapperProps) {
