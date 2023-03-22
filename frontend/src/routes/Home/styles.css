@@ -65,6 +65,16 @@ a {
 
 .fancy:hover > .outer > .inner > .letter {
   background: linear-gradient(to right, var(--red), var(--yellow), var(--red));
+  color: var(--red);
+  background-size: 1000%;
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 30s linear infinite;
+}
+
+.fancy:hover > .outer > .inner > .letter > svg {
+  color: linear-gradient(to right, var(--red), var(--yellow), var(--red));
   background-size: 1000%;
   background-clip: inherit;
   -webkit-background-clip: text;

@@ -1,9 +1,13 @@
+import { faCodeBranch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Typography } from "@mui/material";
 
 import "./styles.css";
 
 function HomePage() {
-  let linkText = "@mkmcary";
+  let linkText = "mkmcary";
+
+  let iconDelay = Math.floor(Math.random() * 5001) - 5000;
 
   return (
     <Box sx={{ minHeight: "70vh", p: "20px" }}>
@@ -16,7 +20,7 @@ function HomePage() {
           p: "10px",
         }}
       >
-        <p className="word">Check out my GitHub!</p>
+        <p className="word">Check out my GitHub</p>
 
         {/* Exploding Link */}
         <Box
@@ -30,9 +34,20 @@ function HomePage() {
               target="_blank"
               className="word fancy"
             >
+              <span className="outer">
+                <span
+                  className="inner"
+                  style={{ animationDelay: `${iconDelay}ms` }}
+                >
+                  <span className="letter" style={{ animationDelay: "0ms" }}>
+                    <FontAwesomeIcon icon={faCodeBranch} />
+                  </span>
+                </span>
+              </span>
+
               {linkText.split("").map((letter, index) => {
                 let innerDelay = Math.floor(Math.random() * 5001) - 5000;
-                let letterDelay = 1000 * index;
+                let letterDelay = 1000 * (index + 1);
 
                 return (
                   <span className="outer" key={index}>
