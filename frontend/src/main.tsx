@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./routes/homepage";
+import HomePage from "./routes/Home";
 import MyList, { loader as myListLoader } from "./routes/mylist";
 import SearchPage from "./routes/search";
 
