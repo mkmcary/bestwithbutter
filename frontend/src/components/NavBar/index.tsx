@@ -63,7 +63,7 @@ function NavBar() {
           {/* Buttons */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map(({ name, route }) => (
-              <Link to={route} style={{ textDecoration: "none" }}>
+              <Link to={route} style={{ textDecoration: "none" }} key={name}>
                 <Button
                   key={name}
                   onClick={handleCloseNavMenu}
@@ -110,6 +110,7 @@ function NavBar() {
                 <Link
                   to={route}
                   style={{ color: "black", textDecoration: "none" }}
+                  key={name}
                 >
                   <MenuItem key={name} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{name}</Typography>
