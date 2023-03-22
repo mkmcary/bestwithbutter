@@ -31,11 +31,9 @@
 
 .word {
   color: black;
-  font-size: clamp(2rem, 8vw, 10rem);
-  font-family: "Oxygen";
+  font-size: clamp(2rem, 8vw, 6rem);
   font-weight: 700;
   margin: 0rem;
-  text-transform: uppercase;
   transition: opacity 250ms ease;
 }
 
