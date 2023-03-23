@@ -1,4 +1,8 @@
-import { Box, Grid, Typography, Divider } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import "./styles.css";
 
 export interface MovieDetails {
   id: number;
@@ -6,6 +10,7 @@ export interface MovieDetails {
   overview: string;
   genres: string[];
   poster_url: string;
+  backdrop_url: string;
   release_date: string;
 }
 
@@ -14,7 +19,7 @@ interface MovieNodeProps {
 }
 
 function MovieNode({ movie }: MovieNodeProps) {
-  const genres = movie.genres.join(", ");
+  const genres = movie.genres[0]; // temp
 
   const formatDateString = (date: string) => {
     let months: { [name: string]: string } = {
@@ -41,53 +46,35 @@ function MovieNode({ movie }: MovieNodeProps) {
   };
 
   return (
-    <Box sx={{ textAlign: "left" }}>
-      <Box sx={{ m: "10px" }}>
-        <Typography variant="h4" sx={{ fontWeight: 700 }}>
+    <Box
+      className="movie-node"
+      sx={{
+        backgroundImage: `url("${movie.backdrop_url}")`,
+      }}
+    >
+      <Box className="movie-node-background">
+        {/* Poster */}
+        <Box
+          className="movie-node-poster"
+          sx={{ backgroundImage: `url("${movie.poster_url}")` }}
+        />
+
+        {/* Title */}
+        <Typography variant="h4" className="movie-node-title">
           {movie.title}
         </Typography>
-      </Box>
 
-      <Divider />
+        {/* Description */}
+        <p className="movie-node-description">{movie.overview}</p>
 
-      <Grid container sx={{ my: "10px", mb: "10px" }}>
-        <Grid
-          item
-          xs={4}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img
-            src={movie.poster_url}
-            style={{
-              width: "80%",
-              maxWidth: 300,
-              borderRadius: 10,
-              margin: "auto",
-              display: "block",
-            }}
-          />
-        </Grid>
-        <Grid item xs={8}>
-          <Box sx={{ m: "10px", minHeight: "300px" }}>
-            <Typography variant="h6" sx={{ fontWeight: 600, mb: "5px" }}>
-              {formatDateString(movie.release_date)}
-            </Typography>
-            <Typography variant="h6" sx={{ fontWeight: 600, mb: "5px" }}>
-              {genres}
-            </Typography>
-            <Typography>{movie.overview}</Typography>
-          </Box>
-        </Grid>
-      </Grid>
+        {/* Add Button */}
+        <Button variant="contained" className="movie-node-add-button">
+          <FontAwesomeIcon icon={faPlus} />
+        </Button>
 
-      <Divider />
-
-      <Box sx={{ m: "10px" }}>
-        <Typography variant="caption">TMDB ID: {movie.id}</Typography>
+        <Box className="movie-node-genres-box">
+          <p className="movie-node-genres">{genres}</p>
+        </Box>
       </Box>
     </Box>
   );

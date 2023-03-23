@@ -28,14 +28,16 @@ function SearchPage() {
   };
 
   return (
-    <div>
-      <Box sx={{ display: "flex", p: "30px", justifyContent: "center" }}>
-        <div style={{ marginTop: "50px", marginBottom: "20px" }}>
+    <div style={{ backgroundColor: "#202020", minHeight: "80vh" }}>
+      <div style={{ padding: "80px 0px 30px 0px" }}>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
           <SearchBar search={search} />
-        </div>
-      </Box>
+        </Box>
+      </div>
 
-      <Box sx={{ p: "30px" }}>{results && <ListTable movies={results} />}</Box>
+      <Box sx={{ p: "30px", display: "flex", justifyContent: "center" }}>
+        {results && <ListTable movies={results} />}
+      </Box>
     </div>
   );
 }

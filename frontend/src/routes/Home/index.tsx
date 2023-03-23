@@ -33,14 +33,7 @@ function HomePage() {
             justifyContent: "center",
           }}
         >
-          <img
-            src="/matthew.jpg"
-            style={
-              {
-                // width: "100%",
-              }
-            }
-          />
+          <img src="/matthew.jpg" />
         </div>
 
         {/* Text */}

@@ -42,6 +42,7 @@ async def search(req: Request, snippet: str, page: Union[int, None] = None):
             genres.append("Unknown Genre")
 
         poster_path = movie['poster_path']
+        backdrop_path = movie['backdrop_path']
 
         movies.append({
             "id": movie['id'],
@@ -49,6 +50,7 @@ async def search(req: Request, snippet: str, page: Union[int, None] = None):
             "overview": movie['overview'],
             "genres": genres,
             "poster_url": f"https://image.tmdb.org/t/p/original{poster_path}",
+            "backdrop_url": f"https://image.tmdb.org/t/p/original{backdrop_path}",
             "release_date": movie['release_date']
         })
 
@@ -73,8 +75,9 @@ async def search(req: Request, snippet: str, page: Union[int, None] = None):
             genres.append("Unknown Genre")
 
         poster_path = show['poster_path']
+        backdrop_path = show['backdrop_path']
 
-        release_date = "Unkown Release"
+        release_date = "Unknown Release"
         if 'first_air_date' in show:
             release_date = show['first_air_date']
 
@@ -84,6 +87,7 @@ async def search(req: Request, snippet: str, page: Union[int, None] = None):
             "overview": show['overview'],
             "genres": genres,
             "poster_url": f"https://image.tmdb.org/t/p/original{poster_path}",
+            "backdrop_url": f"https://image.tmdb.org/t/p/original{backdrop_path}",
             "release_date": release_date
         })
 

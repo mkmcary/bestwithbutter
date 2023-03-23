@@ -1,0 +1,96 @@
+.movie-node {
+  background-size: cover;
+  height: 300px;
+  width: 600px;
+  border-radius: 20px;
+  margin: 50px 20px 50px 20px;
+}
+
+.movie-node-background {
+  background: rgba(0, 0, 0, 0.8);
+  /* background: linear-gradient(
+    15deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0) 100%
+  ); */
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #f21b42;
+  position: relative;
+}
+
+.movie-node-poster {
+  position: absolute;
+  left: 30px;
+  bottom: -30px;
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  border: 5px solid #ffffff;
+  background-size: cover;
+}
+
+.movie-node-title {
+  position: absolute;
+  top: 30px;
+  left: 260px;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700 !important;
+  color: #ffffff;
+}
+
+.movie-node-title {
+  position: absolute;
+  top: 30px;
+  left: 260px;
+  width: 310px;
+  font-weight: 700 !important;
+  color: #ffffff;
+}
+
+.movie-node-description {
+  position: absolute;
+  top: 150px;
+  left: 260px;
+  width: 310px;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.movie-node-add-button {
+  position: absolute;
+  width: 50px !important;
+  height: 50px;
+  border-radius: 25px !important;
+  left: 500px;
+  bottom: -270px;
+  background-color: #12bd76 !important;
+  font-weight: 700 !important;
+}
+
+.movie-node-genres-box {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  border-radius: 25px !important;
+  left: 260px;
+  bottom: -30px;
+  background-color: #771afa !important;
+  z-index: 5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.movie-node-genres {
+  color: #ffffff;
+  font-weight: 700 !important;
+}
